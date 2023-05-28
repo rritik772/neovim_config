@@ -13,7 +13,7 @@ local M = {}
 
 M.ui = {
     transparency = true,
-    theme = 'catppuccin',
+    theme = 'everforest',
     statusline = {
         separator_style = "round"
     }

@@ -2,6 +2,16 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
+local mason = require "mason-lspconfig"
+
+mason.setup_handlers {
+    function (server_name)
+        lspconfig[server_name].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+    end
+}
 
 lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
